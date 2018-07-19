@@ -4,10 +4,10 @@
 # ---------------------------------------------------------------
 
 # Site
-title: LiuWeiXiong
+title: Kaka2y
 subtitle:
 description:
-author: John Doe
+author: Liu_wx
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
 date_format: '%Y-%m-%d'
@@ -151,8 +151,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 
 
