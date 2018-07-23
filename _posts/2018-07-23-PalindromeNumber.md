@@ -26,7 +26,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 >```
 
 ## Solution1:
-这个问题和之前做过的[这题](https://leetcode.com/problems/reverse-integer/description/)有点类似，不过当时并没有记录下做法，但是在思路上可以借鉴反向输出的做法，也就是用`取余法`来对给出的整数由低位到高位的遍历输出，因为所需要输出的位数不多，所以可以直接使用`ArrayList`来进行操作，而不使用`LinkedList`，可以参考下这一篇记录——先占个位[链接]()  
+这个问题和之前做过的[这题](https://leetcode.com/problems/reverse-integer/description/)有点类似，不过当时并没有记录下做法，但是在思路上可以借鉴反向输出的做法，也就是用`取余法`来对给出的整数由低位到高位的遍历输出，因为所需要输出的位数不多，所以可以直接使用`ArrayList`来进行操作，而不使用`LinkedList`，可以参考下这一篇记录——先占个坑，有空来填完[链接]()  
 ```java
 class Solution {
     public boolean isPalindrome(int x) {
