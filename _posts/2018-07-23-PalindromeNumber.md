@@ -50,7 +50,7 @@ class Solution {
     }
 }
 ```
-## Solutin2:
+## Solution2:
 做完上面那个解法，在API里无意间看到了`Collection`这个工具类，想着可不可以用里面的reverse()方法来试一下，将得到的逆向数组做一次反向，再做比较，于是乎有了下面的解法。  
 这种方法需要使用到Java的`CopyOnWriteArrayList`这个类。我在本地调试时没有问题，不过放到Leetcode上时，编译会报错，原因是找不到CopyOnWriteArrayList这个类，不知道是怎么回事。  
 （更新一下，刚刚review了一下post上去的代码，是没有加上下面的`implort`语句的，我还以为Leetcode会自动导入，可能官方只是会自动导入Java的一些基本包而已，像`java.lang`，`java.util`，而超过2层的包都需要自己导入）。
