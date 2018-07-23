@@ -25,10 +25,8 @@ Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 >```
 
-这个问题和之前做过的[这题](https://leetcode.com/problems/reverse-integer/description/)有点类似，不过当时并没有记录下做法，但是在思路上可以借鉴反向输出的做法，也就是用`取余法`来对给出的整数由低位到高位的遍历输出，因为所需要输出的位数不多，所以可以直接使用`ArrayList`来进行操作，而不使用`LinkedList`，可以参考下这一篇记录——先占个位[链接]()  
-
 ## Solution1:
-
+这个问题和之前做过的[这题](https://leetcode.com/problems/reverse-integer/description/)有点类似，不过当时并没有记录下做法，但是在思路上可以借鉴反向输出的做法，也就是用`取余法`来对给出的整数由低位到高位的遍历输出，因为所需要输出的位数不多，所以可以直接使用`ArrayList`来进行操作，而不使用`LinkedList`，可以参考下这一篇记录——先占个位[链接]()  
 ```java
 class Solution {
     public boolean isPalindrome(int x) {
@@ -53,8 +51,9 @@ class Solution {
 }
 ```
 ## Solutin2:
-做完上面那个解法，在API里无意间看到了`Collection`这个工具类，想着可不可以用里面的reverse()方法来试一下，将得到的逆向数组做一次反向，再做比较，于是乎有了下面的解法。
-这种方法需要使用到Java的`CopyOnWriteArrayList`这个类。我在本地调试时没有问题，不过放到Leetcode上时，编译会报错，原因是找不到CopyOnWriteArrayList这个类，不知道是怎么回事。（更新一下，刚刚review了一下post上去的代码，是没有加上下面的`implort`语句的，我还以为Leetcode会自动导入，可能官方只是会自动导入Java的一些基本包而已，像`java.lang`，`java.util`，而超过2层的包都需要自己导入）。
+做完上面那个解法，在API里无意间看到了`Collection`这个工具类，想着可不可以用里面的reverse()方法来试一下，将得到的逆向数组做一次反向，再做比较，于是乎有了下面的解法。  
+这种方法需要使用到Java的`CopyOnWriteArrayList`这个类。我在本地调试时没有问题，不过放到Leetcode上时，编译会报错，原因是找不到CopyOnWriteArrayList这个类，不知道是怎么回事。  
+（更新一下，刚刚review了一下post上去的代码，是没有加上下面的`implort`语句的，我还以为Leetcode会自动导入，可能官方只是会自动导入Java的一些基本包而已，像`java.lang`，`java.util`，而超过2层的包都需要自己导入）。
 
 ```java
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -77,13 +76,15 @@ class Solution {
     }
 }
 ```
-我把这两种解法都post上去，不过前者所花费的时间会比较少
+我把这两种解法都post上去，不过前者所花费的时间会比较少  
+
 |Solution|Question|Status|Runtime|Language|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |Solution1|Palindrome Number|Accept|115 ms|Java|
 |Solution2|Palindrome Number|Accept|137 ms|Java|
-刚好不犯困，就索性来看看`CopyOnWriteArrayList`这个类是什么回事。
-然后发现在`CopyOnWriteArrayList`的源代码的这个构造方法中，使用的是Arrays这个工具类对传进去的泛型对象数组进行转换。
+
+刚好不犯困，就索性来看看`CopyOnWriteArrayList`这个类是什么回事。  
+然后发现在`CopyOnWriteArrayList`的源代码的这个构造方法中，使用的是Arrays这个工具类对传进去的泛型对象数组进行转换。  
 ```java
 /**
      * Creates a list containing the elements of the specified
