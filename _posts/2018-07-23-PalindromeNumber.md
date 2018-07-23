@@ -76,6 +76,7 @@ class Solution {
     }
 }
 ```
+## Runtime比较
 我把这两种解法都post上去，不过前者所花费的时间会比较少  
 
 |Solution|Question|Status|Runtime|Language|
