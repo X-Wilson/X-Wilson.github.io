@@ -3,8 +3,10 @@ title: PalindromeNumber
 date: 2018-07-23 21:50:00
 tags: 
 - Leetcode
+excerpt_separator: <!--more-->
 ---
 该问题的[Leetcode地址](https://leetcode.com/problems/palindrome-number/description/)
+<!--more-->
 ## 问题描述：
 >Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.  
 >**Example 1:**
