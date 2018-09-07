@@ -1,5 +1,5 @@
 ---
-title: Druid读取jdbc.properties文件初始化失败问题
+title: Druid读取jdbc.properties文件初始化失败
 date: 2018-09-05 
 tags: Java, Druid
 excerpt_separator: <!--more-->
