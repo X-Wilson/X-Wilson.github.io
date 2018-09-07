@@ -1,12 +1,12 @@
 ---
 title: Druid读取jdbc.properties文件初始化失败问题
 date: 2018-09-05 
-tags: Java,Druid
+tags: Java, Druid
 excerpt_separator: <!--more-->
 ---
 ## 背景
 在配置测试项目的数据库连接池时，我选用了alibaba的开源数据库连接池Druid，毕竟官方在项目的[wiki](https://github.com/alibaba/druid/wiki/%E9%A6%96%E9%A1%B5)中宣称——**DruidDataSource是最好的数据库连接池**，扛得住双十一千万级并发量的，说起话来就是有底气。  
-btw，吐槽一下，在[英文版的wiki](https://github.com/alibaba/druid/wiki/FAQ)中，这句话就变成了`之一`：Druid is one of the best database connection pools written in JAVA。是因为加上了`in JAVA`这个定语吗？:joy:  
+btw，吐槽一下，在[英文版的wiki](https://github.com/alibaba/druid/wiki/FAQ)中，这句话就变成了`之一`：Druid is one of the best database connection pools written in JAVA。是因为加上了`in JAVA`这个定语吗？:joy:
 <!--more-->
 
 ## 配置
@@ -32,12 +32,12 @@ else if (rawUrl.startsWith("jdbc:mysql:")) {
 ```
 `jdbc.properties`文件内容，仅配置了简单的连接属性。
 ```properties
-url=jdbc:mysql://localhost:3306/seckill?characterEncoding=utf8
+url=jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=utf8
 username=root
 password=admin
 ```
 ## 调试
-在做DAO的单元测试时（详细的DAO与单元测试类可见这个[仓库](https://github.com/Kaka2y/seckill_realize)），遇到了如下的错误。报错的信息是说Druid初始化错误，这个`url:jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=utf8` 是错误的。
+在做DAO的单元测试时（详细的DAO与单元测试类可见这个[仓库](https://github.com/Kaka2y/seckill_realize)），遇到了如下的错误:
 ```
 21:32:11.664 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking init method  'init' on bean with name 'dataSource'
 21:32:12.529 [main] ERROR c.alibaba.druid.pool.DruidDataSource - init datasource error, url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=utf8
@@ -111,7 +111,7 @@ Key值为`username`时会直接从系统的配置文件中获取到本机的user
 
 那么只能改以下jdbc中的配置字段名称了，参考Druid官方给出的占位符做出修改：  
 ```properties
-jdbc_url=jdbc:mysql://localhost:3306/seckill?characterEncoding=utf8
+jdbc_url=jdbc:mysql://localhost:3306/useUnicode=true&seckill?characterEncoding=utf8
 jdbc_user=root
 jdbc_password=admin
 ```

@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 
 # Site
-title: Kaka2y
+title: kaka2y
 subtitle:
 description: Calm down && Move on
 author: kaka2y
@@ -90,10 +90,10 @@ rss: false
 since: 2018
 
 # icon between year and author @Footer
-authoricon: paw
+authoricon: coffee
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -277,7 +277,7 @@ sidebar:
   b2t: false
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
 
 
 # Blog rolls
@@ -317,8 +317,9 @@ post_meta:
 # Post wordcount display settings
 post_wordcount:
   item_text: true
-  wordcount: false
+  wordcount: true
   min2read: false
+  totalcount: true
   separated_meta: true
 
 # Wechat Subscriber
@@ -329,7 +330,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -585,7 +586,7 @@ use_motion: true
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
@@ -602,7 +603,7 @@ pace: false
 #pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-minimal
+pace_theme: pace-theme-flash
 
 # Canvas-nest
 canvas_nest: true
